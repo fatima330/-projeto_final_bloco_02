@@ -40,7 +40,7 @@ public class CategoriaController {
 	    public ResponseEntity<Categoria> getById(@PathVariable Long id) {
 	        return categoriaRepository.findById(id)
 	            .map(resposta -> ResponseEntity.ok(resposta))
-	            .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	            .orElse(ResponseEntity.notFound().build());
 	    }
 	 
 	 @GetMapping("/tipo/{tipo}")
